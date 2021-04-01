@@ -7,9 +7,10 @@ import { LandingComponent } from './landing/landing.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material/material.module';
 import { UsersComponent } from './users/users.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent, UsersComponent],
+  declarations: [AppComponent, LandingComponent, UsersComponent, NavbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
