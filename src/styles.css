@@ -21,7 +21,7 @@
 #landing {
   background: url(../src/assets/landing.jpg);
   background-position: center;
-  display:grid;
+  display: grid;
   justify-content: center;
   width: 60%;
   height: 40vh;
@@ -29,10 +29,10 @@
 }
 
 .header {
-    padding-top: 100px;
-    color: white;
-    font-size: xx-large;
-    font-weight: 1000;
+  padding-top: 100px;
+  color: white;
+  font-size: xx-large;
+  font-weight: 1000;
 }
 
 h1,
@@ -51,7 +51,7 @@ h6 {
 }
 
 .socials {
-  background-color: rgba(8, 8, 8, 0.8);
+  /* background-color: rgba(8, 8, 8, 0.8); */
   padding-top: 20px;
   display: flex;
   justify-content: center;
@@ -75,13 +75,33 @@ h6 {
 .circle-link:hover {
   transform: translateY(-0.25rem);
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-} 
-
+}
 
 .copyright {
   color: white;
-  background-color: black;
+  /* background-color: black; */
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.search-output {
+  margin-top: 100px;
+}
+
+.form-of-forms {
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+}
+
+/* .footer-routes {
+  position: fixed;
+  bottom: 0;
+} */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
