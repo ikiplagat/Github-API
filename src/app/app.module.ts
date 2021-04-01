@@ -9,9 +9,10 @@ import { MaterialModule } from './shared/material/material.module';
 import { UsersComponent } from './users/users.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { RepositoriesComponent } from './repositories/repositories.component';
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent, UsersComponent, NavbarComponent, NotFoundComponent],
+  declarations: [AppComponent, LandingComponent, UsersComponent, NavbarComponent, NotFoundComponent, RepositoriesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
