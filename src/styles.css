@@ -14,6 +14,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.bg {
+  background-image: url(../src/assets/bg.jpg);
+}
+
 #landing {
   background: url(../src/assets/landing.jpg);
   background-position: center;

@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="text-center">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Github Username here"
+        name="search"
+        #search
+      />
+      <button
+        class="btn btn-primary"
+        (click)="searchGithub(search)"
+        type="button"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <mat-card class="card">
+        <mat-card-header>
+          <div mat-card-avatar class="header-image"></div>
+          <mat-card-title><strong>Ian Kiplagat</strong></mat-card-title>
+          <mat-card-subtitle>Software Developer</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="" alt="" />
+      </mat-card>
+    </div>
+    <div class="col-md-6" style="margin-left: 180px">
+      <mat-card class="card">
+        <mat-card-content>
+          <h5 class="card-title"><strong>Username:</strong></h5>
+          <p class="card-text"><strong>Bio:</strong></p>
+          <p class="card-text"><strong>Public Repositories:</strong></p>
+          <p class="card-text"><strong>Followers:</strong></p>
+          <p class="card-text"><strong>Following:</strong></p>
+          <p class="card-text"><strong>Account Created on:</strong></p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="accent">Visit Github</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div>
+    <h3 class="found-repos"><strong>Found Repositories</strong></h3>
+  </div>
+</div>
+<!--Footer-->
+<footer class="text-center">
+  <hr class="my-4" />
+
+  <!-- Social icons -->
+  <div class="socials pb-4">
+    <a href="https://www.facebook.com/" target="_blank">
+      <i class="circle-link fa fa-facebook-f mr-3"></i>
+    </a>
+
+    <a href="https://twitter.com/" target="_blank">
+      <i class="circle-link fa fa-twitter mr-3"></i>
+    </a>
+
+    <a href="https://www.youtube.com/" target="_blank">
+      <i class="circle-link fa fa-youtube mr-3"></i>
+    </a>
+
+    <a href="https://plus.google.com/" target="_blank">
+      <i class="circle-link fa fa-envelope mr-3"></i>
+    </a>
+
+    <a href="circle-link https://pinterest.com/" target="_blank">
+      <i class="circle-link fa fa-pinterest mr-3"></i>
+    </a>
+
+    <a href="https://github.com/" target="_blank">
+      <i class="circle-link fa fa-github mr-3"></i>
+    </a>
+  </div>
+  <!-- Social icons -->
+
+  <!--Copyright-->
+  <div class="copyright py-3">
+    © 2021 Copyright:
+    <a href="#" target="_blank"> Ian Kiplagat </a>
+  </div>
+  <!--/.Copyright-->
+</footer>
+<!--/.Footer-->
