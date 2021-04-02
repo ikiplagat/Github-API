@@ -26,6 +26,7 @@
   width: 60%;
   height: 40vh;
   margin-top: 30px;
+  color: black;
 }
 
 .header {
@@ -91,11 +92,6 @@ h6 {
   margin-right: 25%;
   width: 50%;
 }
-
-/* .footer-routes {
-  position: fixed;
-  bottom: 0;
-} */
 
 html,
 body {
