@@ -10,14 +10,23 @@ import { UsersComponent } from './users/users.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RepositoriesComponent } from './repositories/repositories.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent, UsersComponent, NavbarComponent, NotFoundComponent, RepositoriesComponent],
+  declarations: [
+    AppComponent,
+    LandingComponent,
+    UsersComponent,
+    NavbarComponent,
+    NotFoundComponent,
+    RepositoriesComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

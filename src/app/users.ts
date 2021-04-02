@@ -1,9 +1,11 @@
 export class Users {
-  username: string;
-  bio: string;
-  profile_: any;
-  repositories: number;
-  followers: number;
-  following: number;
-  created_on: string;
+  constructor(
+    public username: string,
+    public bio: string,
+    // profile_: any,
+    // public repositories: number,
+    // public followers: number,
+    // following: number,
+    // public date: Date
+  ) {}
 }
