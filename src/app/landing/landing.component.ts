@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { GitRequestService } from '../git-http/git-request.service';
 
 import { Users } from '../users';
+import { Repositories } from '../repositories';
 
 @Component({
   selector: 'app-landing',
@@ -10,17 +12,15 @@ import { Users } from '../users';
 })
 export class LandingComponent implements OnInit {
   user: Users;
+  repositories: Repositories;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private gitService: GitRequestService
+  ) {}
 
   ngOnInit() {
-    interface ApiResponse {
-      username: string;
-      bio: string;
-    }
-    this.http.get<ApiResponse>('https://api.github.com').subscribe((data) => {
-      
-      this.user = new Users(data.username, data.bio);
-    });
+    this.gitService.gitRequest();
+    this.user = this.gitService.user;
   }
 }
