@@ -10,12 +10,14 @@
       <mat-card class="card">
         <mat-card-header>
           <div mat-card-avatar class="header-image"></div>
-          <mat-card-title><strong>Ian Kiplagat</strong></mat-card-title>
+          <mat-card-title
+            ><strong>{{ user.name }}</strong></mat-card-title
+          >
           <mat-card-subtitle>Software Developer</mat-card-subtitle>
         </mat-card-header>
         <img
           mat-card-image
-          src="https://avatars.githubusercontent.com/u/78469773?s=400&u=c5ada583a0141c124599d4893b8a189c04216711&v=4"
+          src= '{{ user.avatar_url }}'
           alt="Ian Kiplagat"
         />
       </mat-card>
@@ -24,15 +26,23 @@
       <mat-card class="card">
         <mat-card-content>
           <h5 class="card-title">
-            <strong>Username: {{ user.username }}</strong>
+            <strong>Username: {{ user.login }}</strong>
           </h5>
           <p class="card-text">
             <strong>Bio: {{ user.bio }}</strong>
           </p>
-          <p class="card-text"><strong>Public Repositories:</strong></p>
-          <p class="card-text"><strong>Followers:</strong></p>
-          <p class="card-text"><strong>Following:</strong></p>
-          <p class="card-text"><strong>Account Created on:</strong></p>
+          <p class="card-text">
+            <strong>Public Repositories: {{ user.public_repos }}</strong>
+          </p>
+          <p class="card-text">
+            <strong>Followers: {{ user.followers }}</strong>
+          </p>
+          <p class="card-text">
+            <strong>Following: {{ user.following }}</strong>
+          </p>
+          <p class="card-text">
+            <strong>Account Created on: {{ user.created_at | date }}</strong>
+          </p>
         </mat-card-content>
         <mat-card-actions>
           <button mat-raised-button color="primary">Visit Github</button>
