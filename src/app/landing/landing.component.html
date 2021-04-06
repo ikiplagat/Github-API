@@ -5,7 +5,7 @@
   </h1>
 </div>
 <div class="container">
-  <div class="row margin-a">
+  <div class="row justify-content-center">
     <div class="col-md-4 profilep">
       <mat-card class="card">
         <mat-card-header>
@@ -15,14 +15,10 @@
           >
           <mat-card-subtitle>Software Developer</mat-card-subtitle>
         </mat-card-header>
-        <img
-          mat-card-image
-          src= '{{ user.avatar_url }}'
-          alt="Ian Kiplagat"
-        />
+        <img mat-card-image src="{{ user.avatar_url }}" alt="Ian Kiplagat" />
       </mat-card>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 profilep">
       <mat-card class="card">
         <mat-card-content>
           <h5 class="card-title">
@@ -45,13 +41,59 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button color="primary">Visit Github</button>
+          <a href="{{ user.html_url }}"
+            ><button mat-raised-button color="primary">Visit Github</button></a
+          >
         </mat-card-actions>
       </mat-card>
     </div>
   </div>
-  <div>
-    <h3 class="found-repos"><strong>Found Repositories</strong></h3>
+  <div class="d-flex justify-content-center mt-5">
+    <button mat-raised-button color="primary" (click)="getRepo(user.login)">
+      View Repository
+    </button>
+  </div>
+  <div
+    class="container card repo-display mt-3 mb-3"
+    *ngFor="let repository of repositories"
+  >
+    <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title class="pt-3"
+        ><strong>{{ repository.name }}</strong></mat-card-title
+      >
+      <mat-card-subtitle
+        >Created: {{ repository.created_at | date }}</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <div>{{ repository.description }}</div>
+      <div class="mt-2">Language used: {{ repository.language }}</div>
+      <div class="row mt-2 mb-4">
+        <div class="col-6">Watchers: {{ repository.watchers }}</div>
+        <div class="col-6">Forks: {{ repository.forks }}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <button type="button" class="btn btn-outline-primary btn-sm">
+            <a href="{{ repository.svn_url }}" target="_blank" class="card-link"
+              >View code</a
+            >
+          </button>
+        </div>
+        <div class="col-md-6 posts">
+          <button type="button" class="btn btn-outline-primary btn-sm">
+            <a
+              class="col-md-4"
+              href="{{ repository.homepage }}"
+              target="_blank"
+              class="card-link"
+              >Live site</a
+            >
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
   </div>
 </div>
 <!--Footer-->

@@ -13,6 +13,7 @@ import { RepositoriesComponent } from './repositories/repositories.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,8 +30,9 @@ import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    FormsModule,
     NgProgressModule.forRoot(),
-    NgProgressHttpClientModule
+    NgProgressHttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,3 +1,5 @@
+import { Repositories } from './repositories';
+
 export class Users {
   constructor(
     public name: string,
@@ -8,5 +10,6 @@ export class Users {
     public followers: number,
     public following: number,
     public created_at: Date,
+    public html_url: string
   ) {}
 }

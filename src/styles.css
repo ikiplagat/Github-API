@@ -52,7 +52,6 @@ h6 {
 }
 
 .socials {
-  /* background-color: rgba(8, 8, 8, 0.8); */
   padding-top: 20px;
   display: flex;
   justify-content: center;
@@ -99,4 +98,20 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.btn-repo {
+  margin-left: 95px;
+}
+
+@media only screen and (max-width: 800px) {
+  .profilep {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .posts {
+    margin-top: 20px;
+  }
 }

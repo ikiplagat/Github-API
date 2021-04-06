@@ -1,51 +1,115 @@
 <div class="container">
+  <ng-progress></ng-progress>
   <div class="text-center mt-5">
-    <form class="form-of-forms">
+    <form class="form-of-forms" (ngSubmit)="getUser()" #searchForm="ngForm">
       <div class="form-group">
         <input
+          id="search"
           type="text"
           class="form-control"
-          placeholder="Enter Github username here"
+          placeholder="kasparov-creat"
           name="search"
-          #search
+          [(ngModel)]="newSearch"
+          #search="ngModel"
           required
         />
-        <button
-          class="mt-4"
-          mat-raised-button
-          color="primary"
-        >
+        <button class="mt-4" type="submit" mat-raised-button color="primary">
           Search
         </button>
       </div>
     </form>
   </div>
-  <div class="row search-output">
-    <div class="col-md-4">
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4 profilep">
       <mat-card class="card">
         <mat-card-header>
           <div mat-card-avatar class="header-image"></div>
-          <mat-card-title><strong>Ian Kiplagat</strong></mat-card-title>
+          <mat-card-title
+            ><strong>{{ user.name }}</strong></mat-card-title
+          >
           <mat-card-subtitle>Software Developer</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="" alt="" />
+        <img mat-card-image src="{{ user.avatar_url }}" alt="Ian Kiplagat" />
       </mat-card>
     </div>
-    <div class="col-md-6" style="margin-left: 180px">
+    <div class="col-md-6 profilep">
       <mat-card class="card">
         <mat-card-content>
-          <h5 class="card-title"><strong>Username:</strong></h5>
-          <p class="card-text"><strong>Bio:</strong></p>
-          <p class="card-text"><strong>Public Repositories:</strong></p>
-          <p class="card-text"><strong>Followers:</strong></p>
-          <p class="card-text"><strong>Following:</strong></p>
-          <p class="card-text"><strong>Account Created on:</strong></p>
+          <h5 class="card-title">
+            <strong>Username: {{ user.login }}</strong>
+          </h5>
+          <p class="card-text">
+            <strong>Bio: {{ user.bio }}</strong>
+          </p>
+          <p class="card-text">
+            <strong>Public Repositories: {{ user.public_repos }}</strong>
+          </p>
+          <p class="card-text">
+            <strong>Followers: {{ user.followers }}</strong>
+          </p>
+          <p class="card-text">
+            <strong>Following: {{ user.following }}</strong>
+          </p>
+          <p class="card-text">
+            <strong>Account Created on: {{ user.created_at | date }}</strong>
+          </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button color="primary">Visit Github</button>
+          <a href="{{ user.html_url }}"
+            ><button mat-raised-button color="primary">Visit Github</button></a
+          >
         </mat-card-actions>
       </mat-card>
     </div>
+  </div>
+  <div class="d-flex justify-content-center mt-5">
+    <button mat-raised-button color="primary" (click)="getRepo(user.login)">
+      View Repository
+    </button>
+  </div>
+  <div
+    class="container card repo-display mt-3 mb-3"
+    *ngFor="let repository of repositories"
+  >
+    <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title class="pt-3"
+        ><strong>{{ repository.name }}</strong></mat-card-title
+      >
+      <mat-card-subtitle
+        >Created: {{ repository.created_at | date }}</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <div>{{ repository.description }}</div>
+      <div class="mt-2">Language used: {{ repository.language }}</div>
+      <div class="row mt-2 mb-4">
+        <div class="col-6">Watchers: {{ repository.watchers }}</div>
+        <div class="col-6">Forks: {{ repository.forks }}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <button type="button" class="btn btn-outline-primary btn-sm">
+            <a href="{{ repository.svn_url }}" target="_blank" class="card-link"
+              >View code</a
+            >
+          </button>
+        </div>
+        <div class="col-md-6 posts">
+          <button type="button" class="btn btn-outline-primary btn-sm">
+            <a
+              class="col-md-4"
+              href="{{ repository.homepage }}"
+              target="_blank"
+              class="card-link"
+              >Live site</a
+            >
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
   </div>
 </div>
 <!--Footer-->
