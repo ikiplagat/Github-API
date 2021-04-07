@@ -9,8 +9,8 @@ const routes: Routes = [
   { path: 'landing', component: LandingComponent },
   { path: 'users', component: UsersComponent },
   { path: 'repositories', component: RepositoriesComponent },
-  
-  { path: '', redirectTo: '/landing', pathMatch: 'full' },
+
+  { path: '', component: LandingComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
