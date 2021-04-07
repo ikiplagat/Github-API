@@ -53,12 +53,18 @@
             <strong>Following: {{ user.following }}</strong>
           </p>
           <p class="card-text">
-            <strong>Account Created on: {{ user.created_at | date }}</strong>
+            <strong
+              >Account Created on: {{ user.created_at | date
+              }}<span id="time"> ({{ user.created_at | daycreated }}</span> days
+              ago)</strong
+            >
           </p>
         </mat-card-content>
         <mat-card-actions>
           <a href="{{ user.html_url }}"
-            ><button mat-raised-button color="primary">Visit Github</button></a
+            ><button appClick mat-raised-button color="primary">
+              Visit Github
+            </button></a
           >
         </mat-card-actions>
       </mat-card>

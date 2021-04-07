@@ -15,6 +15,8 @@ import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 import { FormsModule } from '@angular/forms';
 import { DaycreatedPipe } from './date-count.pipe';
+import { ClickDirective } from './click.directive';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { DaycreatedPipe } from './date-count.pipe';
     NotFoundComponent,
     RepositoriesComponent,
     DaycreatedPipe,
+    ClickDirective,
   ],
   imports: [
     BrowserModule,
