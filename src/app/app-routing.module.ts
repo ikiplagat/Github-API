@@ -6,11 +6,11 @@ import { RepositoriesComponent } from './repositories/repositories.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
+  { path: '', component: LandingComponent },
   { path: 'landing', component: LandingComponent },
   { path: 'users', component: UsersComponent },
   { path: 'repositories', component: RepositoriesComponent },
 
-  { path: '', component: LandingComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
